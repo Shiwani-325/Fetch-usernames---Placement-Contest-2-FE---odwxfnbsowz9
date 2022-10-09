@@ -3,10 +3,19 @@ import '../styles/App.css';
 import { useState, useEffect } from 'react';
 const App = () => {
 //code here 
- fetch('https://content.newtonschool.co/v1/pr/main/users')
+ const[name, stName]=useState(");
+                 const[id,setId]=useState(");    
+                                          useEffect(()=>{
+ fetch('https://content.newtonschool.co/v1/pr/main/users/${id}')
  .then(response => response.json())
- .then(data => console.log(data));
- 
+ .then((data) =>{ 
+  console.log(data.name);
+  setName(data.name)
+ })
+ },[id])
+ const changeInput=(e)=>{
+  setId(e.target.value)
+ }
 
 
 
