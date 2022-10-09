@@ -3,6 +3,9 @@ import '../styles/App.css';
 import { useState, useEffect } from 'react';
 const App = () => {
 //code here 
+ fetch('https://content.newtonschool.co/v1/pr/main/users')
+ .then(response => response.json())
+ .then(data => console.log(data));
  
 
 
